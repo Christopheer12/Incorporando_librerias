@@ -18,20 +18,22 @@ function bancos() {
             let cuotasMenualesEspecial = dinero / cuotas;
             let interesesEspecial = cuotasMenualesEspecial * Especial;
             let finalPorMesEspecial = cuotasMenualesEspecial + interesesEspecial
-            alert(`Tu cuenta fija en taza especial es de : ${finalPorMesEspecial}`);
+            swal(`Tu cuenta fija en taza especial es de : ${finalPorMesEspecial}`);
             break;
         case "IUDU":
             let cuotasMenualesIUDU = dinero / cuotas;
             let interesesIUDU = cuotasMenualesIUDU * IUDU;
             let finalPorMesIUDU = cuotasMenualesIUDU + interesesIUDU
-            alert(`Tu cuenta fija en taza IUDU es de :${finalPorMesIUDU}`);
+            swal(`Tu cuenta fija en taza IUDU es de :${finalPorMesIUDU}`);
             break;
         case "Santander":
             let cuotasMenualesSantander = dinero / cuotas;
             let interesesSantander = cuotasMenualesSantander * Santander;
             let finalPorMesSantander = cuotasMenualesSantander + interesesSantander
-            alert(`Tu cuenta fija en taza Santander es de :${finalPorMesSantander}`);
+            swal(`Tu cuenta fija en taza Santander es de :${finalPorMesSantander}`);
             break;
+        case "Seleccione":
+            swal("incompleto", "seleccione una opcion valida", "error");
 
     }
 
@@ -50,6 +52,7 @@ function datos() {
     let apellidoCompleto = document.getElementById("apellidoCompleto").value;
     let numeroTelefonico = parseInt(document.getElementById("numeroTelefonico").value);
     let correoElectronico = document.getElementById("correoElectronico").value;
+    swal("En buena hora tio, sos la ostia!", "tu endeudada con el banco es ¡EXITOSA!", "success");
 
     localStorage.setItem("nombre Completo", nombreCompleto);
     localStorage.setItem("apellido Completos", apellidoCompleto);
