@@ -12,7 +12,7 @@ function bancos() {
             let cuotasMenualesUva = dinero / cuotas;
             let interesesUva = cuotasMenualesUva * UVA;
             let finalPorMesUva = cuotasMenualesUva + interesesUva
-            alert(` tus cuotas UVA son de ${finalPorMesUva} por mes, recuerda que al ser una taza uva esta sujeta a inflacion`);
+            swal(` tus cuotas UVA son de ${finalPorMesUva} por mes, recuerda que al ser una taza uva esta sujeta a inflacion`);
             break;
         case "Especial":
             let cuotasMenualesEspecial = dinero / cuotas;
