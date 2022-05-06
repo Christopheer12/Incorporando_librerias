@@ -12,25 +12,25 @@ function bancos() {
             let cuotasMenualesUva = dinero / cuotas;
             let interesesUva = cuotasMenualesUva * UVA;
             let finalPorMesUva = cuotasMenualesUva + interesesUva
-            swal(` tus cuotas UVA son de ${finalPorMesUva} por mes, recuerda que al ser una taza uva esta sujeta a inflacion`);
+            swal("Felicidades, tu credito fue aprobado:", ` ${finalPorMesUva} sea tu cuota UVA por mes, requerde que la Uva esta sujeta a inflacion`, "success");
             break;
         case "Especial":
             let cuotasMenualesEspecial = dinero / cuotas;
             let interesesEspecial = cuotasMenualesEspecial * Especial;
             let finalPorMesEspecial = cuotasMenualesEspecial + interesesEspecial
-            swal(`Tu cuenta fija en taza especial es de : ${finalPorMesEspecial}`);
+            swal("Felicidades, tu credito fue aprobado:", ` ${finalPorMesEspecial} sea tu cuota fija por mes`, "success");
             break;
         case "IUDU":
             let cuotasMenualesIUDU = dinero / cuotas;
             let interesesIUDU = cuotasMenualesIUDU * IUDU;
             let finalPorMesIUDU = cuotasMenualesIUDU + interesesIUDU
-            swal(`Tu cuenta fija en taza IUDU es de :${finalPorMesIUDU}`);
+            swal("Felicidades, tu credito fue aprobado:", ` ${finalPorMesIUDU} sea tu cuota fija por mes`, "success");
             break;
         case "Santander":
             let cuotasMenualesSantander = dinero / cuotas;
             let interesesSantander = cuotasMenualesSantander * Santander;
             let finalPorMesSantander = cuotasMenualesSantander + interesesSantander
-            swal(`Tu cuenta fija en taza Santander es de :${finalPorMesSantander}`);
+            swal("Felicidades, tu credito fue aprobado:", ` ${finalPorMesSantander} sea tu cuota fija por mes`, "success");
             break;
         case "Seleccione":
             swal("incompleto", "seleccione una opcion valida", "error");
@@ -52,8 +52,22 @@ function datos() {
     let apellidoCompleto = document.getElementById("apellidoCompleto").value;
     let numeroTelefonico = parseInt(document.getElementById("numeroTelefonico").value);
     let correoElectronico = document.getElementById("correoElectronico").value;
-    swal("En buena hora tio, sos la ostia!", "tu endeudada con el banco es ¡EXITOSA!", "success");
-
+    swal({
+        title: "Esta seguro que pide pagar esto, y no es una banalidad??",
+        text: "si la respuesta es si, estoy seguro, de click en continuar. caso contrario de click en cancelar",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("En buena hora tio, nos a vendido tu alm... por varios meses", {
+            icon: "success",
+          });
+        } else {
+          swal("Poof! gallina, cancelaste la operacion");
+        }
+      });
     localStorage.setItem("nombre Completo", nombreCompleto);
     localStorage.setItem("apellido Completos", apellidoCompleto);
     localStorage.setItem("numero Telefonico", numeroTelefonico);
